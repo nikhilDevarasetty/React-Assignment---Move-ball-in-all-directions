@@ -26,7 +26,7 @@ const App = () => {
         </button>
       );
     } else {
-      // console.log(x, y);
+      console.log(x, y);
       return (
         <div
           className="ball"
@@ -39,23 +39,25 @@ const App = () => {
   const action = (event) => {
     let x1, y1;
     if (event.key === "ArrowRight") {
+      console.log("right");
       x1 = x + 5;
       y1 = y;
       setX(x1);
       setBallPosition({ left: x1 + "px", top: y1 + "px" });
     } else if (event.key === "ArrowLeft") {
+      console.log("left");
       x1 = x - 5;
       y1 = y;
       setX(x1);
       setBallPosition({ left: x1 + "px", top: y1 + "px" });
     } else if (event.key === "ArrowUp") {
-      // console.log("up");
+      console.log("up");
       x1 = x;
       y1 = y - 5;
       setX(y1);
       setBallPosition({ left: x1 + "px", top: y1 + "px" });
     } else if (event.key === "ArrowDown") {
-      // console.log("down");
+      console.log("down");
       x1 = x;
       y1 = y + 5;
       setX(y1);
@@ -69,7 +71,7 @@ const App = () => {
     return () => {
       window.removeEventListener("keydown", action);
     };
-  }, []);
+  }, [action]);
   return (
     <div className="playground">
       <button onClick={reset} className="reset">
