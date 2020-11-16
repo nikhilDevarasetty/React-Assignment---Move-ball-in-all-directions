@@ -54,13 +54,13 @@ const App = () => {
       console.log("up");
       x1 = x;
       y1 = y - 5;
-      setX(y1);
+      setY(y1);
       setBallPosition({ left: x1 + "px", top: y1 + "px" });
     } else if (event.key === "ArrowDown") {
       console.log("down");
       x1 = x;
       y1 = y + 5;
-      setX(y1);
+      setY(y1);
       setBallPosition({ left: x1 + "px", top: y1 + "px" });
     }
   };
