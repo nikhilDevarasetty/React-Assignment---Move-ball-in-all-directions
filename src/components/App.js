@@ -49,11 +49,13 @@ const App = () => {
       setX(x1);
       setBallPosition({ left: x1 + "px", top: y1 + "px" });
     } else if (event.key === "ArrowUp") {
+      // console.log("up");
       x1 = x;
       y1 = y - 5;
       setX(y1);
       setBallPosition({ left: x1 + "px", top: y1 + "px" });
     } else if (event.key === "ArrowDown") {
+      // console.log("down");
       x1 = x;
       y1 = y + 5;
       setX(y1);
@@ -62,8 +64,12 @@ const App = () => {
   };
 
   useEffect(() => {
-    document.addEventListener("keydown", action);
-  });
+    window.addEventListener("keydown", action);
+
+    return () => {
+      window.removeEventListener("keydown", action);
+    };
+  }, []);
   return (
     <div className="playground">
       <button onClick={reset} className="reset">
