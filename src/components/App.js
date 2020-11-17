@@ -36,34 +36,35 @@ const App = () => {
   };
 
   const moveBall = (evt) => {
+    let temp;
     if (renderBall === true) {
       if (evt.key === "ArrowUp") {
-        y -= 5;
-        setY(y);
+        temp = y - 5;
+        setY(temp);
         setBallPosition({
-          top: y + "px",
+          top: temp + "px",
           left: x + "px",
         });
       } else if (evt.key === "ArrowDown") {
-        y += 5;
-        setY(y);
+        temp = y + 5;
+        setY(temp);
         setBallPosition({
-          top: y + "px",
+          top: temp + "px",
           left: x + "px",
         });
       } else if (evt.key === "ArrowLeft") {
-        x -= 5;
-        setX(x);
+        temp = x - 5;
+        setX(temp);
         setBallPosition({
           top: y + "px",
-          left: x + "px",
+          left: temp + "px",
         });
       } else if (evt.key === "ArrowRight") {
-        x += 5;
-        setX(x);
+        temp = x + 5;
+        setX(temp);
         setBallPosition({
           top: y + "px",
-          left: x + "px",
+          left: temp + "px",
         });
       }
     }
