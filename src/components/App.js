@@ -26,12 +26,7 @@ const App = () => {
         </button>
       );
     } else {
-      return (
-        <div
-          className="ball"
-          style={{ left: ballPosition.left, top: ballPosition.top }}
-        ></div>
-      );
+      return <div className="ball" style={ballPosition}></div>;
     }
   };
 
